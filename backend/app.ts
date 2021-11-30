@@ -1,7 +1,6 @@
 import express from 'express';
 import routes from './src/app-routes/routes';
 import bodyParser from 'body-parser';
-import { Request, Response,NextFunction,ErrorRequestHandler } from 'express';
 
 const app = express();
 
@@ -11,7 +10,7 @@ app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/home',( _ ,res) => {
+app.get('/',( _ ,res) => {
     res.status(200).json({
         data: 'hello, Welcome to the word converter Api'
     })
