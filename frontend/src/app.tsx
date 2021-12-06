@@ -1,10 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import './app.scss';
+import {Home} from './pages/Home';
+import {AppBar} from './components/AppBar';
 
 export function App(){
     return (
         <div className="page_layout">
-           app index
+            <AppBar/>
+            <div className="page_body">
+                <Home/>
+            </div>
         </div>
     )
 }

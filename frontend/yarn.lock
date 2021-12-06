@@ -5352,6 +5352,11 @@ react-shallow-renderer@^16.13.1:
     object-assign "^4.1.1"
     react-is "^16.12.0 || ^17.0.0"
 
+react-simple-keyboard@^3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/react-simple-keyboard/-/react-simple-keyboard-3.4.4.tgz#a336d17ef11a2d31fa00cc8a8fd4cb9270e9104b"
+  integrity sha512-gFmesgg/Zy/TrEpJf9HQTrdjVZM2A5xg1aZOKZSgv4B4T5S0b7Y2PtXBMl431vEdEP/RBLCht1R9ia4mmJ5oPw==
+
 react-test-renderer@^16.0.0-0:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.14.0.tgz#e98360087348e260c56d4fe2315e970480c228ae"
@@ -5839,6 +5844,11 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.6.tgz#24e630c4b0f03fea446a2bd299e62b4a6ca8d0af"
   integrity sha512-sDl4qMFpijcGw22U5w63KmD3cZJfBuFlVNbVMKje2keoKML7X2UzWbc4XrmEbDwg0NXJc3yv4/ox7b+JWb57kQ==
+
+simple-keyboard-input-mask@^3.0.328:
+  version "3.0.328"
+  resolved "https://registry.yarnpkg.com/simple-keyboard-input-mask/-/simple-keyboard-input-mask-3.0.328.tgz#6493d6a3bbce81f9762f1d36dcb4c714e4db6a5e"
+  integrity sha512-ykdF9znJXaZeINBpf1sZDQQJx3219bPntVUi9TvR0JZSbIlH1UUn02FW4LtwKIXQ8aqrYWP4FTlTdCujK1GRwA==
 
 sisteransi@^1.0.5:
   version "1.0.5"
