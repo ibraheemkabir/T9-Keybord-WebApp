@@ -47,18 +47,27 @@ export function Home(){
                     handleButtonMouseUp={()=>console.log('uppppp')}
                     theme={"hg-theme-default hg-layout-numeric numeric-theme"}
                     layoutName={'default'}
-                    onChange={(input:string) => {console.log(input)}}
+                    onChange={(input:string) => {}}
                     onKeyPress={(button:string) => handleInputChanged(button)}
                     disableCaretPositioning={true}
                     layout={{
                         default: keyLayout,
                         shift: ["! / #", "$ % ^", "& * (", "{shift} ) +", "{bksp}"]
                     }}
+                    display = {{
+                        '{space}' : 'space',
+                        '{//}' : ' ',
+                        '{bksp}' : '< backspace'
+                    }}
                     inputMask={"(99) 9999-9999"}
                     modules={[]}
                 />
             </div>
-                <Suggestions combinations={combinations||[]} words={wordSuggestions||[]}/>
+                <Suggestions 
+                    combinations={combinations||[]} 
+                    words={wordSuggestions||[]}
+                    combinationSpecified={(((input).split(' ').at(-1))||'').toString()}
+                />
         </div>
     )
 }

@@ -12,5 +12,10 @@ export interface inputView{
 export interface ApiRequest {
     url:string,
     method:string,
-    body: {}
+    body: any
 } 
+
+export interface IsValidResponse {
+    isValid: boolean,
+    value?: {}
+}

@@ -1,5 +1,5 @@
 import {ApiRequest} from './types'
-
+import * as CacheHandler from './../utils/cacheHandler';
 export class ApiClient {
 
     constructor(private baseUrl: string){
@@ -12,6 +12,9 @@ export class ApiClient {
     }
 
     async post(req: ApiRequest): Promise<any> {
+        const isInCache = CacheHandler.isValid(req.body.word)
+        console.log(isInCache,'isInCACHE')
+        if(isInCache.isValid) return JSON.parse(isInCache.value as string);
         try {
             const res = await fetch(`${this.baseUrl}/${req.url}`, {
                     method: 'POST',
@@ -20,20 +23,7 @@ export class ApiClient {
                     headers: this.headers
             });
             const response = await res.json()
-            return response
-        }catch(e){
-            throw(e);
-        }
-    }
-
-    async fetch(req: ApiRequest): Promise<any> {        
-        try {
-            const res = await fetch(`${this.baseUrl}/${req.url}`, {
-                    method: req.method,
-                    mode: 'cors',
-                    headers: this.headers
-            });
-            const response = await res.json()
+            CacheHandler.store(req.body.word,JSON.stringify(response))
             return response
         }catch(e){
             throw(e);

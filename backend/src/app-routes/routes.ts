@@ -1,5 +1,5 @@
 import express from "express";
-import {numberToWordController} from './../services/controllers/numberToWordController';
+import {numberToWordController} from '../services/controllers/toWordController';
 import {inputValidatorMiddleWare} from './../services/middlewares/inputValidator';
 
 const router = express.Router()

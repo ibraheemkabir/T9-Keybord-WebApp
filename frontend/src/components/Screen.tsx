@@ -10,7 +10,7 @@ export const Screen = (props:ScreenProps) => {
     return (
         <div className="screen_container">
             <div className="inner_screen">
-                {props.content} 
+                {props.content  || <span className="placeholder">Enter Text Below..</span>}
             </div>
             {
                 (props.suggestion.length>0 && props.content) && 

@@ -2,17 +2,19 @@ import React from 'react';
 
 interface SuggestionProps {
     combinations:string[],
-    words:string[]
+    words:string[],
+    combinationSpecified: string,
 }
 
 export const Suggestions = (props:SuggestionProps) => {
     return (
+        props.combinationSpecified ?
         <div className="main_sugestions_container">
             {
                 props.combinations.length>0 && 
                 <>
                     <div className="header">
-                        Combinations 
+                        Possible Combinations for {props.combinationSpecified}
                     </div>
                     <div className="suggestions_container">
                             {
@@ -27,7 +29,7 @@ export const Suggestions = (props:SuggestionProps) => {
                 props.words.length>0 && 
                 <> 
                     <div className="header">
-                        Word Suggestions 
+                        Word Suggestions for {props.combinationSpecified}
                     </div>
                     <div className="suggestions_container">
                             {
@@ -38,6 +40,6 @@ export const Suggestions = (props:SuggestionProps) => {
                     </div>
                 </>
             }
-        </div>
+        </div> : <></>
     )
 }

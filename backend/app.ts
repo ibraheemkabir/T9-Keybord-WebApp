@@ -7,20 +7,29 @@ const app = express();
 
 const port = 5000;
 
-app.use(cors())
+app.use(cors());
 
 app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/',( _ ,res) => {
+app.post('/',( _ ,res) => {
     res.status(200).json({
-        data: 'hello, Welcome to the word converter Api'
+        message: 'hello, Welcome to the word converter Api'
     })
 });
 
 app.use('/v1', routes)
 
+app.use((_,res)=>{
+    res.status(404).json({
+        status: "Failed",
+        message: 'Route Not found, kindly refer to Api documentation'
+    })
+})
+
 app.listen(port, () => 
     console.log(`Running on Port ${port}`)
 );
+
+export const server = app

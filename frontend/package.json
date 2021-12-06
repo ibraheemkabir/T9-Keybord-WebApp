@@ -72,10 +72,14 @@
       "ts",
       "tsx",
       "js",
-      "scss"
+      "scss",
+      "css"
+    ],
+    "transformIgnorePatterns":[
+      "<rootDir>/node_modules/react-simple-keyboard/build/css/index.css"
     ],
     "moduleNameMapper": {
-      "^.+\\.(scss)$": "identity-obj-proxy",
+      "^.+\\.(scss|css|less)$": "identity-obj-proxy",
       "^~(.*)$": "<rootDir>/src/$1"
     },
     "moduleDirectories": [
