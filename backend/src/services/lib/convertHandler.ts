@@ -13,7 +13,7 @@ export class conversionHandler {
     }
 
     private getLetters( word : string ) {
-        const letters = word.split('');
+        const letters = word.toString().split('');
         let arrayOfLetterEquivalents = [];
         for(let i of letters){
             const map = numbersMap[i] || [i];
@@ -39,7 +39,7 @@ export class conversionHandler {
         const arrayOfWordLetters = this.getLetters(word);
         const combinations = this.getCombinations(arrayOfWordLetters);
         const possibleWords = this.getPossibleWords(combinations)
-        return { combinations , possibleWords };
+        return { combinations , possibleWords: possibleWords.slice(0, 30) };
     }
 
 }
